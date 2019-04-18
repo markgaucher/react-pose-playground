@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { PoseGroup } from "react-pose";
 
 import Background from "../Background";
+import Close from "../Close";
 import Dialog from "./Dialog";
 import Portal from "../Portal";
 import useToggle from "../useToggle";
@@ -18,8 +19,11 @@ const DialogComponent = ({ children, renderToggle, width }) => {
           {active && [
             <Background key="background" />,
             <Dialog key="dialog" width={width}>
-              <Dialog.Close onClick={toggle}>Close</Dialog.Close>
-              {children}
+              <Dialog.Header>
+                Dialog Header
+                <Close onClick={toggle}>Close</Close>
+              </Dialog.Header>
+              <Dialog.Content>{children}</Dialog.Content>
             </Dialog>
           ]}
         </PoseGroup>

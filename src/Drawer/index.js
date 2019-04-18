@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { PoseGroup } from "react-pose";
 
 import Background from "../Background";
+import Close from "../Close";
 import Drawer from "./Drawer";
 import Portal from "../Portal";
 import useToggle from "../useToggle";
@@ -18,8 +19,10 @@ const DrawerComponent = ({ children, renderToggle, width }) => {
           {active && [
             <Background key="background" />,
             <Drawer key="drawer" width={width}>
-              <Drawer.Close onClick={toggle}>Close</Drawer.Close>
-              {children}
+              <Drawer.Header>
+                <Close onClick={toggle}>Close</Close>
+              </Drawer.Header>
+              <Drawer.Content>{children}</Drawer.Content>
             </Drawer>
           ]}
         </PoseGroup>
