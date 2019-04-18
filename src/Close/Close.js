@@ -8,6 +8,7 @@ const Close = styled.button`
   background-repeat: no-repeat;
   background-size: ${rem(24)} ${rem(24)};
   border: 0;
+  cursor: pointer;
   font-size: ${rem(24)};
   height: ${rem(44)};
   line-height: 0;
